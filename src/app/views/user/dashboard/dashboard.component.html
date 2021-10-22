@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-12">
+            <h2>Welcome back {{userName}}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" *ngFor="let user of userList | slice:0:show; let i=index">
+            <div class="card" style="width: 18rem;">
+                <img [src]="user.imgPath" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{user.title}}</h5>
+                    <p class="card-text">{{user.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" (click)="increaseShow()">Show More</button>
+        </div>
+    </div>
+</div>
